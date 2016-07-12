@@ -1,0 +1,2 @@
+defmodule FrameworkStats do
+end

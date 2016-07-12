@@ -1,0 +1,8 @@
+defmodule FrameworkStatsTest do
+  use ExUnit.Case
+  doctest FrameworkStats
+
+  test "the truth" do
+    assert 1 + 1 == 2
+  end
+end
