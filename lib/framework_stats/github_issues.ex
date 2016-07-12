@@ -37,7 +37,15 @@ defmodule FrameworkStats.GithubIssues do
     Enum.find(headers, fn(h) -> elem(h, 0) == "Link" end)
   end
 
-  defp retrieve_link_header(_) do
+  defp retrieve_link_header({:ok, %{status_code: 403}}) do
+    IO.puts "Yikes, you hit github API rate limit!"
+
+    nil
+  end
+
+  defp retrieve_link_header(response) do
+    IO.puts "Yikes, network error!"
+
     nil
   end
 end
